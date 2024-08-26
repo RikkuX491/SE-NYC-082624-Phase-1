@@ -1,84 +1,42 @@
-// console.log('hello')
-// alert('hello')
-// const personName = prompt("Please enter your name: ")
-// alert(`Welcome to Flatburger, ${personName}!`)
+// Deliverable # 1
+const greeting = "Welcome to Flatburger!";
 
-// const num1 = Number(prompt("Enter your first number: "))
-// console.log(num1)
-// console.log(typeof num1)
-// const num2 = Number(prompt("Enter your second number: "))
-// console.log(num2)
-// console.log(typeof num2)
-// alert(`The sum of ${num1} + ${num2} is ${num1 + num2}`)
+// Deliverable # 2
+const num1 = 7;
 
-// console.log(7 === 7)
-// console.log(7 === '7')
-// console.log(7 !== 7)
-// console.log(7 != '7')
+// Deliverable # 3
+let num2 = "14";
 
-// Debugger examples
-// let personName = "Alice"
-// let age = 21
-// debugger
-// debugger
-// personName = "Bob"
-// debugger
-// age = age + 1
-// debugger
+// Deliverable # 4
+console.log(typeof num2);
 
-const personName = "Alice"
-const age = 21
-const isStudent = "hello"
+// Deliverable # 5
+num2 = Number(num2);
 
-// If, Else If, & Else Statements
-// let greetingPhrase
+// Deliverable # 6
+console.log(typeof num2);
 
-// if(isStudent === true){
-//     greetingPhrase = `Hello ${personName}! Welcome to Flatiron School!`
-// }
-// else if(personName === "Alice"){
-//     greetingPhrase = "Hi Alice!"
-// }
-// else{
-//     greetingPhrase = "Goodbye!"
-// }
+// Deliverable # 7
+const sum = num1 + num2;
 
+// Deliverable # 8
+const sumString = `${num1} + ${num2} = ${sum}`;
 
-// Same example with just If & Else statements
-// let greetingPhrase
+// Deliverable # 9
+if(num1 === 7 || num1 === 49){
+    console.log("That's a lucky number!");
+}
 
-// if(isStudent === true){
-//     greetingPhrase = `Hello ${personName}! Welcome to Flatiron School!`
-// }
-// else{
-//     greetingPhrase = "Goodbye!"
-// }
+// Deliverable # 10
+else if(num1 > 7 && num1 < 49){
+    console.log("That might be a lucky number!");
+}
 
-// Ternary operator
-// let greetingPhrase = isStudent === true ? `Hello ${personName}! Welcome to Flatiron School!` : "Goodbye!"
+// Deliverable # 11
+else{
+    console.log("That's not a lucky number.");
+}
 
-// Switch statement
-// let greetingPhrase
-
-// switch(isStudent){
-//     case true:
-//         greetingPhrase = `Hello ${personName}! Welcome to Flatiron School!`
-//         console.log(1)
-//         break
-//     case false:
-//         greetingPhrase = "You are not a student!"
-//         console.log(2)
-//         break
-//     default:
-//         greetingPhrase = "Goodbye!"
-//         console.log(3)
-// }
-
-// console.log(greetingPhrase)
-
-// console.log(personName === "Alice" && age === 21)
-// console.log(personName === "Bob" && age === 21)
-// console.log(personName === "Bob" || age === 21)
-// console.log(!true)
-// console.log(!"hello")
-// console.log(!!"hello")
+// Deliverable # 12
+const luckyPhrase = num1 === 7 && num2 === 7 ? "Lucky Sevens!" : "Better luck next time";
+console.log(luckyPhrase);
