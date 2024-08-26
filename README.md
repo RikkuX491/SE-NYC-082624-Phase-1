@@ -89,7 +89,7 @@ Hint: If the function body of an arrow function consists of a single expression,
 
 10. Add `burgerObject` to the array stored in the `foodsArray` variable.
 
-11. Initialize a variable named `burgerObject2` using `const` and assign it the value of an `object` that has the following key and value pairs - `name: "Maple Bacon Burger"`, `description: "A great option for a breakfast burger or a great option for brunch if you're hungry enough to eat 2 of these burgers!"`, `price: 7.99`. Add the `burgerObject2` to `foodsArray`.
+11. Initialize a variable named `burgerObject2` using `const` and assign it the value of an `object` that has the following key and value pairs - `name: "Maple Bacon Burger"`, `description: "A great option for a breakfast burger or a great option for brunch if you're hungry enough to eat 2 of these burgers!"`, `price: 7.99`. Add `burgerObject2` to the array stored in the `foodsArray` variable.
 
 12. Create 3 more objects that have `name`, `description`, and `price` keys. Pick any values of your choosing in regards to the values for `name`, `description`, and `price` for each of the foods. Add these 3 objects to the array stored in the `foodsArray` variable.
 
