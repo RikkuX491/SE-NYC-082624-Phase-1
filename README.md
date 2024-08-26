@@ -67,7 +67,7 @@ Once your browser loads the content from your `index.html` file, open the `Web I
 
 Write your code in the `index.js` file that is in the `src` folder.
 
-1. Create a function named `flatburgerGreeting()` that prints the `string` "Welcome to Flatburger!" to the console using `console.log()`
+1. Create a function named `flatburgerGreeting()` that prints the `string` "Welcome to Flatburger!" to the console using `console.log()`.
 
 2. Create a function named `printGreeting()` that has one parameter named `greeting`. The function should print the value of the parameter `greeting` to the console using `console.log()`.
 
@@ -79,23 +79,23 @@ Write your code in the `index.js` file that is in the `src` folder.
 
 Hint: If the function body of an arrow function consists of a single expression, we do not need to wrap it in curly braces. When there are no braces, arrow functions have an implicit return, i.e., they automatically return the result of the last expression! This is the only situation in which a JavaScript function doesn't require an explicit return with the return keyword.
 
-6. Initialize a variable named `foodsArray` using `const` and assign it the value of an empty array `[]`
+6. Initialize a variable named `foodsArray` using `const` and assign it the value of an empty array `[]`.
 
-7. Initialize a variable named `burgerObject` using `const` and assign it the value of an `object` that has a `name` key with the value of the `string` "Flatburger"
+7. Initialize a variable named `burgerObject` using `const` and assign it the value of an `object` that has a `name` key with the value of the `string` "Flatburger".
 
-8. Modify the `burgerObject` object using dot notation to add a `description` property to it with the value of the `string` "Our signature Flatburger which is a super delicious cheeseburger that'll leave you wanting another Flatburger! It's too good to be true!"
+8. Modify the `burgerObject` object using dot notation to add a `description` property to it with the value of the `string` "Our signature Flatburger which is a super delicious cheeseburger that'll leave you wanting another Flatburger! It's too good to be true!".
 
-9. Modify the `burgerObject` object using bracket notation to add a `price` property to it with the value of the `number` `14.99`
+9. Modify the `burgerObject` object using bracket notation to add a `price` property to it with the value of the `number` `14.99`.
 
-10. Add the `burgerObject` to `foodsArray`
+10. Add `burgerObject` to the array stored in the `foodsArray` variable.
 
-11. Initialize a variable named `burgerObject2` using `const` and assign it the value of an `object` that has the following key and value pairs - `name: "Maple Bacon Burger"`, `description: "A great option for a breakfast burger or a great option for brunch if you're hungry enough to eat 2 of these burgers!"`, `price: 7.99`. Add the `burgerObject2` to `foodsArray`
+11. Initialize a variable named `burgerObject2` using `const` and assign it the value of an `object` that has the following key and value pairs - `name: "Maple Bacon Burger"`, `description: "A great option for a breakfast burger or a great option for brunch if you're hungry enough to eat 2 of these burgers!"`, `price: 7.99`. Add the `burgerObject2` to `foodsArray`.
 
-12. Create 3 more objects that have `name`, `description`, and `price` keys. Pick any values of your choosing in regards to the values for `name`, `description`, and `price` for each of the foods. Add these 3 objects to `foodsArray`
+12. Create 3 more objects that have `name`, `description`, and `price` keys. Pick any values of your choosing in regards to the values for `name`, `description`, and `price` for each of the foods. Add these 3 objects to the array stored in the `foodsArray` variable.
 
-13. Write a `for` loop that will loop over the `foodsArray` array and print the `name` of each of the food objects in the array using `console.log()`
+13. Write a `for` loop that will loop over the `foodsArray` array and print the `name` of each of the food objects in the array using `console.log()`.
 
-14. Write a `for...of` statement that will iterate over the `foodsArray` array and print the `description` of each of the food objects in the array using `console.log()`
+14. Write a `for...of` statement that will iterate over the `foodsArray` array and print the `description` of each of the food objects in the array using `console.log()`.
 
 ## Functions
 Functions are like a little program. They consist of a set of statements/tasks and return a value or undefined. 
