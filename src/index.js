@@ -54,171 +54,32 @@ const otherFoods = [
     }
 ]
 
-// Example code
-// console.log(burgers)
-
-// Iterating through an array using for...of
-// for(const burger of burgers){
-//     console.log(burger)
-// }
-
-// This is just a visualization of how we might imagine that forEach(), find(), filter(), and map() works...
-const someObject = {
-    forEach: (callbackFunction) => {
-        for(const burger of burgers){
-            callbackFunction(burger)
-        }
-    },
-    find: (callbackFunction) => {
-        for(const burger of burgers){
-            if(callbackFunction(burger) === true){
-                return burger
-            }
-        }
-    },
-    filter: (callbackFunction) => {
-
-        const filteredElements = []
-
-        for(const burger of burgers){
-            if(callbackFunction(burger) === true){
-                filteredElements.push(burger)
-            }
-        }
-
-        return filteredElements
-    },
-    map: (callbackFunction) => {
-        
-        const newArray = []
-
-        for(const burger of burgers){
-            const returnValue = callbackFunction(burger)
-            newArray.push(returnValue)
-        }
-
-        return newArray
-    }
-}
-
-// someObject.forEach(burger => {
-//     console.log(burger)
-// })
-
-// const foundBurger = someObject.find(burger => {
-//     return burger.name === "Flat"
-// })
-
-// console.log(foundBurger)
-
-// const filteredBurgers = someObject.filter(burger => {
-//     return burger.name.charAt(0) === 'M'
-// })
-
-// console.log(filteredBurgers)
-
-// const newArray = someObject.map(burger => {
-//     return burger.name
-// })
-
-// console.log(newArray)
-
-// Iterating through an array using the forEach() array iterator method
-burgers.forEach((burger, index) => {
-    // console.log(burger)
-    // console.log(index)
+// Deliverable # 1 solution code
+burgers.forEach(burger => {
+    console.log(burger.name)
 })
 
-// Using the find() array iterator method to find a specific element depending on a condition
-const foundBurger = burgers.find(burger => {
+// Deliverable # 2 solution code
+burgers.find(burger => {
     return burger.name === "Flatburger"
 })
 
-// console.log(foundBurger)
-
-// Using the filter() array iterator method to get a filtered array of elements depending on a condition
-const filteredBurgers = burgers.filter(burger => {
-    return burger.name.charAt(0) === 'M'
+// Deliverable # 3 solution code
+burgers.filter(burger => {
+    return burger.name.charAt(0) === "M"
 })
 
-// console.log(filteredBurgers)
-
-// Using the map() array iterator method to get a new array of the same length that has information depending on the return value of the callback function
-const newArray = burgers.map(burger => {
-    // if(burger.name === "Flatburger"){
-    //     return "This is the Flatburger!"
-    // }
-    // else {
-    //     return burger
-    // }
-
-    return burger.name
+// Deliverable # 4 solution code
+burgers.map(burger => {
+    return burger.description
 })
 
-// console.log(newArray)
+// Deliverable # 5 solution code
+const restaurantMenu = document.getElementById('restaurant-menu')
 
-// DOM Manipulation example content below
-
-// querySelector() vs getElementById()
-
-// Searching for an element by id with querySelector()
-const foodDetailElement = document.querySelector('#food-detail')
-// console.log(foodDetailElement)
-
-// Searching for an element by class with querySelector()
-// const detailImageElement = document.querySelector('.detail-image')
-// console.log(detailImageElement)
-
-// Searching for an element by id with getElementById()
-// const restaurantMenuElement = document.getElementById('restaurant-menu')
-// console.log(restaurantMenuElement)
-
-// Searching for multiple elements with querySelectorAll()
-const divElements = document.querySelectorAll('div')
-// console.log(divElements)
-// console.log(divElements[0])
-// console.log(divElements[1])
-
-// Searching for multiple elements with getElementsByClassName()
-const elements = document.getElementsByClassName('name')
-// console.log(elements)
-// console.log(elements[0])
-
-// Modifying the text content of an element by reassigning a value to the textContent property of the element
-const nameElement = document.querySelector('.name')
-nameElement.textContent = burgers[0].name
-
-const descriptionElement = document.getElementById('description-display')
-descriptionElement.textContent = burgers[0].description
-
-// Modifying the src attribute of an <img> element
-const detailImageElement = document.querySelector('.detail-image')
-detailImageElement.src = burgers[0].image
-
-// Difference between textContent vs innerText vs innerHTML
-// descriptionElement.textContent = `<h1>hello \nworld</h1>`
-// descriptionElement.innerText = `<h1>hello \nworld</h1>`
-// descriptionElement.innerHTML = `<h1>hello \nworld</h1>`
-
-const restaurantMenuElement = document.getElementById('restaurant-menu')
-
-burgers.forEach(burger => {
-    // Using createElement() to create a new element
+for(let index = 0; index < burgers.length; index++){
     const imgElement = document.createElement('img')
-    imgElement.src = burger.image
-
-    // Using appendChild() to nest an element within another element
-    restaurantMenuElement.appendChild(imgElement)
-
-    // Using append() to nest an element within another element or append text inside of an element
-    // restaurantMenuElement.append("hello world")
-
-    // console.log(burger.image)
-    // console.log(imgElement)
-})
-
-// Removing an element from the DOM
-// restaurantMenuElement.remove()
-// console.log(restaurantMenuElement)
-
-// document.body.append(restaurantMenuElement)
+    imgElement.className = 'burger'
+    imgElement.src = burgers[index].image
+    restaurantMenu.appendChild(imgElement)
+}
