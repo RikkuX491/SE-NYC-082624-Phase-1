@@ -83,3 +83,36 @@ for(let index = 0; index < burgers.length; index++){
     imgElement.src = burgers[index].image
     restaurantMenu.appendChild(imgElement)
 }
+
+// Deliverable # 6 solution code
+otherFoods.forEach(food => {
+    const imgElement = document.createElement('img')
+    imgElement.src = food.image
+    restaurantMenu.appendChild(imgElement)
+})
+
+// Deliverable # 7 solution code
+const detailImageElement = document.querySelector('.detail-image')
+detailImageElement.src = burgers[0].image
+
+// Deliverable # 8 solution code
+const nameElement = document.querySelector('.name')
+nameElement.textContent = burgers[0].name
+
+// Deliverable # 9 solution code
+const descriptionDisplayElement = document.getElementById('description-display')
+descriptionDisplayElement.textContent = burgers[0].description
+
+// Deliverable # 10 solution code
+const restaurantMenuImageElements = document.querySelectorAll('div#restaurant-menu img')
+
+for(const img of restaurantMenuImageElements){
+    img.style = "border-style: solid; border-color: red; border-width: 3px"
+}
+
+// Deliverable # 11 solution code
+const burgerImages = document.getElementsByClassName('burger')
+
+for(const img of burgerImages){
+    img.style.borderColor = "blue"
+}
