@@ -11,7 +11,7 @@
 |----|------------------------------	          |:-----:	|--------	|---------	|
 |1 | JavaScript Fundamentals                      |[01_starter](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/01_starter)|[01_example_code](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/01_example_code)|[01_solution](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/01_solution)|
 |2 | Functions & Scope                	          |[02_starter](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/02_starter)|[02_example_code](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/02_example_code)|[02_solution](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/02_solution)|
-|3 | DOM Manipulation                 	          |[03_starter](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/03_starter)|||
+|3 | DOM Manipulation                 	          |[03_starter](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/03_starter)|[03_example_code](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/03_example_code)||
 |4 | DOM Events                       	          ||||
 |5 | Communicating with the Server    	          ||||
 |6 | POST Requests                    	          ||||
