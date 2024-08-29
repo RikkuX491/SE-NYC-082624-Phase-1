@@ -51,9 +51,11 @@ const foods = [
     }
 ]
 
-function eventHandler(){
-    console.log("You clicked an element!")
-}
+const restaurantMenu = document.getElementById('restaurant-menu')
+
+foods.forEach(addFoodImageToRestaurantMenu)
+
+displayFoodDetails(foods[0])
 
 function displayFoodDetails(food){
     const foodDetailImage = document.querySelector('.detail-image')
@@ -67,33 +69,23 @@ function displayFoodDetails(food){
 }
 
 function addFoodImageToRestaurantMenu(food){
-    const restaurantMenu = document.getElementById('restaurant-menu')
-    // console.log(restaurantMenu)
-
     const foodImage = document.createElement('img')
     foodImage.src = food.image
     restaurantMenu.appendChild(foodImage)
 
-    // Using the addEventListener() method to make each of the <img> elements listen for a click event and execute code in response to the click event
+    // Deliverable # 1 solution code
     foodImage.addEventListener('click', () => {
         displayFoodDetails(food)
     })
 }
 
+// Deliverable # 2 solution code
 function handleSubmit(event) {
     event.preventDefault()
-    // console.log("Form submitted!")
-    // console.log(event)
-    // console.log(event.target)
 
     const newNameInputElement = document.getElementById('new-name')
-    // console.log(newNameInputElement.value)
-
     const newImageInputElement = document.getElementById('new-image')
-    // console.log(newImageInputElement.value)
-
     const newDescriptionTextareaElement = document.getElementById('new-description')
-    // console.log(newDescriptionTextareaElement.value)
     
     const newFood = {
         name: newNameInputElement.value,
@@ -101,34 +93,8 @@ function handleSubmit(event) {
         description: newDescriptionTextareaElement.value
     }
 
-    // console.log(newFood)
     addFoodImageToRestaurantMenu(newFood)
-
-    // event.target is a reference to the element that the event listener was attached to
-    // event.target.reset() allows us to reset the values of the <input> and <textarea> elements to their default values which is empty string ""
-    event.target.reset()
 }
 
-document.addEventListener('DOMContentLoaded', () => {    
-    foods.forEach(addFoodImageToRestaurantMenu)
-    
-    // Display the food details for the first food after the DOM Content has loaded (which is why we invoke the function within the event handler (callback function) for DOMContentLoaded)
-    displayFoodDetails(foods[0])
-    
-    // Example code - working with click events and defining response to the click event using an event handler (callback function)
-    // foodDetailImage.addEventListener('click', () => {
-    //     console.log("You clicked the image!")
-    // })
-    
-    // Example code - click event with the <h3> element within the <header>
-    // const headerText = document.querySelector('header h3')
-    // headerText.addEventListener('click', function () {
-    //     alert("You clicked the <h3> element within the <header> element!")
-    // })
-
-    // Example code - click event with <p> element (description display)
-    // foodDescriptionDisplay.addEventListener('click', eventHandler)
-
-    const newFoodForm = document.getElementById('new-food')
-    newFoodForm.addEventListener('submit', handleSubmit)
-})
+const newFoodForm = document.getElementById('new-food')
+newFoodForm.addEventListener('submit', handleSubmit)
