@@ -15,5 +15,5 @@
 |4 | DOM Events                       	          |[04_starter](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/04_starter)|[04_example_code](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/04_example_code)|[04_solution](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/04_solution)|
 |5 | Communicating with the Server    	          |[05_starter](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/05_starter)|[05_example_code](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/05_example_code)|[05_solution](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/05_solution)|
 |6 | POST Requests                    	          |[06_starter](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/06_starter)|[06_example_code](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/06_example_code)|[06_solution](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/06_solution)|
-|7 | PATCH & DELETE Requests          	          ||||
+|7 | PATCH & DELETE Requests          	          |[07_starter](https://github.com/RikkuX491/SE-NYC-082624-Phase-1/tree/07_starter)|||
 |8 | Communicating with External APIs 	          ||||
