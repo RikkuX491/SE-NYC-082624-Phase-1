@@ -2,14 +2,17 @@ const restaurantMenu = document.getElementById('restaurant-menu')
 
 let currentlyDisplayedFoodId
 
+let foodsArray
+
 fetch('http://localhost:3000/foods')
 .then(response => response.json())
 .then(foods => {
+
+    foodsArray = foods
+
     displayFoodDetails(foods[0])
 
-    foods.forEach(food => {
-        addFoodImageToRestaurantMenu(food)
-    })
+    foods.forEach(addFoodImageToRestaurantMenu)
 })
 
 function addFoodImageToRestaurantMenu(food){
@@ -36,7 +39,15 @@ function addFoodImageToRestaurantMenu(food){
         })
         .then(response => {
             if(response.ok){
-                imgElement.remove()
+                // In response to DELETE request: Steps to optimize our front-end webpage to ensure that the food data will persist when displaying details for different burgers
+
+                // Step 1: Modify foodsArray in response to the DELETE request (delete - deleting an existing food)
+                foodsArray = foodsArray.filter(f => {
+                    return f.id !== food.id
+                })
+                
+                // Steps # 2 & Step 3 happen within the updateImgElementsInRestaurantMenu() function
+                updateImgElementsInRestaurantMenu()
             }
             else{
                 alert(`Error: Unable to delete Food # ${food.id}`)
@@ -59,6 +70,14 @@ function displayFoodDetails(food){
     foodDescriptionDisplayElement.textContent = food.description
     const numberInCartCountElement = document.getElementById('number-in-cart-count')
     numberInCartCountElement.textContent = food.number_in_cart
+}
+
+function updateImgElementsInRestaurantMenu(){
+    // Step 2: Remove all elements that are nested within the restaurant-menu <div> element
+    restaurantMenu.innerHTML = ""
+
+    // Step 3: Add the <img> elements back into the restaurant-menu <div> element using foodsArray
+    foodsArray.forEach(addFoodImageToRestaurantMenu)
 }
 
 const newFoodForm = document.getElementById('new-food')
@@ -87,7 +106,13 @@ newFoodForm.addEventListener('submit', (event) => {
     .then(response => {
         if(response.ok){
             response.json().then(newFoodData => {
-                addFoodImageToRestaurantMenu(newFoodData)
+                // In response to POST request: Steps to optimize our front-end webpage to ensure that the food data will persist when displaying details for different burgers
+
+                // Step 1: Modify foodsArray in response to the POST request (create - adding a new food)
+                foodsArray.push(newFoodData)
+                
+                // Steps # 2 & Step 3 happen within the updateImgElementsInRestaurantMenu() function
+                updateImgElementsInRestaurantMenu()
             })
         }
         else{
@@ -136,6 +161,21 @@ addToCartForm.addEventListener('submit', (event) => {
         if(response.ok){
             response.json().then(updatedFood => {
                 numberInCartCountElement.textContent = updatedFood.number_in_cart
+                
+                // In response to PATCH request: Steps to optimize our front-end webpage to ensure that the food data will persist when displaying details for different burgers
+
+                // Step 1: Modify foodsArray in response to the PATCH request (update - modifying an existing food)
+                foodsArray = foodsArray.map(food => {
+                    if(food.id === updatedFood.id){
+                        return updatedFood
+                    }
+                    else{
+                        return food
+                    }
+                })
+                
+                // Steps # 2 & Step 3 happen within the updateImgElementsInRestaurantMenu() function
+                updateImgElementsInRestaurantMenu()
             })
         }
         else{
