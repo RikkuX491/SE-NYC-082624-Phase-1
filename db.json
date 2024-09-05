@@ -5,70 +5,77 @@
       "name": "Flatburger",
       "image": "assets/food/flatburger.jpeg",
       "description": "Our signature Flatburger which is a super delicious cheeseburger that'll leave you wanting another Flatburger! It's too good to be true!",
-      "number_in_cart": 0
+      "number_in_cart": 6
     },
     {
       "id": 2,
       "name": "Maple Bacon Burger",
       "image": "assets/food/maple-bacon-burger.jpeg",
       "description": "A great option for a breakfast burger or a great option for brunch if you're hungry enough to eat 2 of these burgers!",
-      "number_in_cart": 0
+      "number_in_cart": 5
     },
     {
       "id": 3,
       "name": "Mushroom Burger",
       "image": "assets/food/mushroom-burger.webp",
       "description": "A mushroom burger with our exclusive Flatburger melted cheese!",
-      "number_in_cart": 0
+      "number_in_cart": 7
     },
     {
       "id": 4,
       "name": "Avocado Bun Burger",
       "image": "assets/food/avocado-bun-burger.jpeg",
       "description": "A healthier take on our signature Flatburger but with avocado buns!",
-      "number_in_cart": 0
+      "number_in_cart": 14
     },
     {
       "id": 5,
       "name": "Ramen Burger",
       "image": "assets/food/ramen-burger.jpeg",
       "description": "If you love ramen and burgers, what are you waiting for? Order our exclusive ramen burger now!",
-      "number_in_cart": 0
+      "number_in_cart": 5
     },
     {
       "id": 6,
       "name": "French Fries",
       "image": "assets/food/french-fries.jpeg",
       "description": "The good old french fries made in Flatburger style!",
-      "number_in_cart": 0
+      "number_in_cart": 6
     },
     {
       "id": 7,
       "name": "Burrito",
       "image": "assets/food/burrito.webp",
       "description": "A Flatburger style burrito with our exclusive Flatburger melted cheese and any meat of your choosing in addition to your choice of additional ingredients!",
-      "number_in_cart": 0
+      "number_in_cart": 10
     },
     {
       "id": 8,
       "name": "Taco",
       "image": "assets/food/taco.jpeg",
       "description": "The Flatburger exclusive Taco! Get it while supplies last!",
-      "number_in_cart": 0
+      "number_in_cart": 7
     },
     {
       "id": 9,
       "name": "Hot Dog",
       "image": "assets/food/hot-dog.jpeg",
       "description": "The Flatburger exclusive Hot Dog! Get it while supplies last!",
-      "number_in_cart": 0
+      "number_in_cart": 9
     },
     {
       "id": 10,
       "name": "Onion Rings",
       "image": "assets/food/onion-rings.jpeg",
       "description": "The Flatburger exclusive Onion Rings! Get them while supplies last!",
-      "number_in_cart": 0
+      "number_in_cart": 10
+    },
+    {
+      "name": "Ice Cream",
+      "image": "data:image/jpeg;base64,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",
+      "description": "Flatburger's famous sweet treat!",
+      "number_in_cart": 3,
+      "id": 11
     }
   ]
 }
