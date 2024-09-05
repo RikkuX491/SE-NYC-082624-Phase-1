@@ -1,5 +1,6 @@
 const restaurantMenu = document.getElementById('restaurant-menu')
 
+// Deliverable # 1 solution code
 let currentlyDisplayedFoodId
 
 fetch('http://localhost:3000/foods')
@@ -20,27 +21,12 @@ function addFoodImageToRestaurantMenu(food){
     })
 
     imgElement.addEventListener('click', () => {
-        
-        // console.log(food.id)
-
-        // DELETE request with optimistic rendering
-        // imgElement.remove()
-
-        // fetch(`http://localhost:3000/foods/${67}`, {
-        //     method: "DELETE"
-        // })
-
-        // DELETE request with pessimistic rendering
+        // Deliverable # 2 solution code
         fetch(`http://localhost:3000/foods/${food.id}`, {
             method: "DELETE"
         })
-        .then(response => {
-            if(response.ok){
-                imgElement.remove()
-            }
-            else{
-                alert(`Error: Unable to delete Food # ${food.id}`)
-            }
+        .then(() => {
+            imgElement.remove()
         })
     })
 
@@ -49,6 +35,7 @@ function addFoodImageToRestaurantMenu(food){
 
 function displayFoodDetails(food){
     
+    // Deliverable # 1 solution code
     currentlyDisplayedFoodId = food.id
 
     const foodDetailImageElement = document.getElementsByClassName('detail-image')[0]
@@ -105,25 +92,7 @@ addToCartForm.addEventListener('submit', (event) => {
     const numberInCartCountElement = document.getElementById('number-in-cart-count')
     const sum = Number(numberInCartCountElement.textContent) + Number(numberToAddInputElement.value)
 
-    // console.log(sum)
-    // console.log({sum})
-    // console.log({number_in_cart: sum})
-    // `sum` is the variable that contains the value that we want to save to the database when making the PATCH request to update the number_in_cart
-
-    // console.log(currentlyDisplayedFoodId)
-
-    // PATCH request with Optimistic rendering
-    // numberInCartCountElement.textContent = sum
-
-    // fetch(`http://localhost:3000/foods/${currentlyDisplayedFoodId}`, {
-    //     method: "PATCH",
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify({number_in_cart: sum})
-    // })
-
-    // PATCH request with Pessimistic rendering
+    // Deliverable # 1 solution code
     fetch(`http://localhost:3000/foods/${currentlyDisplayedFoodId}`, {
         method: "PATCH",
         headers: {
@@ -132,19 +101,10 @@ addToCartForm.addEventListener('submit', (event) => {
         },
         body: JSON.stringify({number_in_cart: sum})
     })
-    .then(response => {
-        if(response.ok){
-            response.json().then(updatedFood => {
-                numberInCartCountElement.textContent = updatedFood.number_in_cart
-            })
-        }
-        else{
-            alert(`Error: Unable to update Food # ${currentlyDisplayedFoodId}`)
-        }
+    .then(response => response.json())
+    .then(updatedFood => {
+        numberInCartCountElement.textContent = updatedFood.number_in_cart
     })
-    // .then(updatedFood => {
-    //     numberInCartCountElement.textContent = updatedFood.number_in_cart
-    // })
 
     addToCartForm.reset()
 })
