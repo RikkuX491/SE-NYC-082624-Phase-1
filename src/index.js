@@ -40,12 +40,15 @@ function displayFoodDetails(food){
     foodDescriptionDisplayElement.textContent = food.description
 }
 
-function addCryptocurrencyListItemToList(cryptocurrency){
+function addCryptocurrencyListItemToList(cryptocurrency, className){
     // console.log(cryptocurrency)
     const liElement = document.createElement('li')
 
     // [name] ([symbol]): Rank # [rank] - each <li> should have data in this format
     liElement.textContent = `${cryptocurrency.name} (${cryptocurrency.symbol}): Rank # ${cryptocurrency.rank}`
+
+    // Set the color of the li element to a different color by changing its className attribute
+    liElement.className = className
     
     cryptocurrencyListElement.appendChild(liElement)
 }
@@ -56,19 +59,21 @@ function handleChange(event) {
     cryptocurrencyListElement.innerHTML = ""
 
     if(event.target.value === 'all'){
-        cryptocurrencyArray.forEach(addCryptocurrencyListItemToList)
+        cryptocurrencyArray.forEach(cryptocurrency => {
+            addCryptocurrencyListItemToList(cryptocurrency, event.target.value)
+        })
     }
     else if(event.target.value === 'less_than'){
         cryptocurrencyArray.forEach(cryptocurrency => {
             if(parseInt(cryptocurrency.rank) <= 50){
-                addCryptocurrencyListItemToList(cryptocurrency)
+                addCryptocurrencyListItemToList(cryptocurrency, event.target.value)
             }
         })
     }
     else if(event.target.value === 'greater_than'){
         cryptocurrencyArray.forEach(cryptocurrency => {
             if(parseInt(cryptocurrency.rank) > 50){
-                addCryptocurrencyListItemToList(cryptocurrency)
+                addCryptocurrencyListItemToList(cryptocurrency, event.target.value)
             }
         })
     }
@@ -100,5 +105,7 @@ fetch("https://api.coincap.io/v2/assets")
 
     cryptocurrencyArray = apiData.data
 
-    cryptocurrencyArray.forEach(addCryptocurrencyListItemToList)
+    cryptocurrencyArray.forEach(cryptocurrency => {
+        addCryptocurrencyListItemToList(cryptocurrency, "all")
+    })
 })
